@@ -5,14 +5,19 @@ class BowlingGame
     @rolls = []
   end
 
+# Record a roll in the game.
+#
+# pins - The Integer number of pins knocked down in this roll.
+#
+# Returns nothing.
   def roll(pins)
- 		@pins = pins
+ 		@rolls << pins
   end
 
 # Returns the Integer score for this game. Expects to be run after all rolls
 # for the game have been recorded.
   def score
-  	@pins
+  	@rolls.reduce(:+)
   end
 
 
